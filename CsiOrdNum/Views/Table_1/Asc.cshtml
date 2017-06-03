@@ -1,0 +1,30 @@
+﻿@model IEnumerable<CsiOrdNum.Models.Order01>
+@{
+    ViewBag.Title = "Asc";
+}
+
+<h4>Ascending Order</h4>
+
+<hr>
+
+<table class="table table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EntryValue)
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.EntryValue)
+            </td>
+        </tr>
+
+    }
+    
+</table>
+
+<p> @Html.ActionLink("Enter Value", "Create")    </p>
+<p> @Html.ActionLink("Descending Order", "Desc")   </p>
+<p> @Html.ActionLink("Database Entries", "Index")    </p>

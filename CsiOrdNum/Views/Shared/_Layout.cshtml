@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="container body-content">
+        <h2>Number Order Application</h2>
+
+        <br>
+
+        <h5>
+            This application will store integer values of any size and sort them in order of Ascending or Descending. 
+        </h5>
+            <br>
+        <p>
+            <ul>
+            <li>To enter an integer into the database enter or use arrow keys in the form field and click the submit button.</li>
+            <li>To see the unordered items in the database by select 'Database Entries'.</li>
+            <li>To see the items in Ascending order select 'Ascending Order'.</li>
+            <li>To see the items in Descending order select 'Descending Order'.</li>
+            <li>To delete an entry select 'Delete' for the given entry whilst viewing the database.</li>
+            </ul>
+        </p>
+        <br>
+
+
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - MVC Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

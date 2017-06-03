@@ -1,0 +1,38 @@
+﻿@model IEnumerable<CsiOrdNum.Models.Table_1>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h4>Database Entries</h4>
+
+<hr>
+
+<p>
+    @Html.ActionLink("Enter Value", "Create")
+</p>
+<p> @Html.ActionLink("Descending Order", "Desc") </p>
+<p> @Html.ActionLink("Ascending Order", "Asc")   </p>
+
+<table class="table table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EntryValue)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EntryValue)
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+
+        </td>
+    </tr>
+}
+
+</table>
